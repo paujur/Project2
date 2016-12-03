@@ -26,16 +26,11 @@ class MainViewController: UIViewController {
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         
         searchQuery = searchTextField.text!
-        let encodedText = searchQuery.addingPercentEncoding(withAllowedCharacters: urlHostAllowed)
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        let encodedText = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        newEndPoint = String(format:"", encodedText!)
+        fetchData() { result in
+            //something = result
+        }
         
     }
     
