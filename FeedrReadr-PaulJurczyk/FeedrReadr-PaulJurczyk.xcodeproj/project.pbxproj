@@ -12,6 +12,7 @@
 		040453CB1DF1E11F00E5553A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453C91DF1E11F00E5553A /* Main.storyboard */; };
 		040453CD1DF1E11F00E5553A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040453CC1DF1E11F00E5553A /* Assets.xcassets */; };
 		040453D01DF1E11F00E5553A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */; };
+		040453DC1DF1E28200E5553A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040453DB1DF1E28200E5553A /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		040453CC1DF1E11F00E5553A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040453CF1DF1E11F00E5553A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040453D11DF1E11F00E5553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040453DB1DF1E28200E5553A /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		040453C41DF1E11F00E5553A /* FeedrReadr-PaulJurczyk */ = {
 			isa = PBXGroup;
 			children = (
-				040453C51DF1E11F00E5553A /* AppDelegate.swift */,
-				040453C71DF1E11F00E5553A /* ViewController.swift */,
-				040453C91DF1E11F00E5553A /* Main.storyboard */,
-				040453CC1DF1E11F00E5553A /* Assets.xcassets */,
-				040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */,
+				040453DA1DF1E17100E5553A /* Images */,
+				040453D91DF1E15700E5553A /* Data */,
+				040453D81DF1E15100E5553A /* UI */,
+				040453D71DF1E14C00E5553A /* Logic */,
 				040453D11DF1E11F00E5553A /* Info.plist */,
 			);
 			path = "FeedrReadr-PaulJurczyk";
+			sourceTree = "<group>";
+		};
+		040453D71DF1E14C00E5553A /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				040453C51DF1E11F00E5553A /* AppDelegate.swift */,
+				040453C71DF1E11F00E5553A /* ViewController.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		040453D81DF1E15100E5553A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				040453C91DF1E11F00E5553A /* Main.storyboard */,
+				040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */,
+				040453DB1DF1E28200E5553A /* MainTableViewCell.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		040453D91DF1E15700E5553A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		040453DA1DF1E17100E5553A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				040453CC1DF1E11F00E5553A /* Assets.xcassets */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040453C81DF1E11F00E5553A /* ViewController.swift in Sources */,
+				040453DC1DF1E28200E5553A /* MainTableViewCell.swift in Sources */,
 				040453C61DF1E11F00E5553A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
