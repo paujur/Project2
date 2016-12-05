@@ -14,7 +14,14 @@ class MainViewController: UIViewController {
     
     var searchQuery = ""
     var searchInitiated = Bool()
-    var newEndPoint = String()
+    // May want to me the vars below to somewhere more global, or into a class
+    var newEndPoint = "http://svcs/ebay.com/services/search/FindingService/v1?"
+    var operationName = "OPERATION-NAME=findItemsByKeywords&"
+    var version = "SERVICE-VERSION=1.13.0&"
+    var appName = "SECURITY-APPNAME=PaulJurc-FeedrRea-PRD-445f0c763-0cddb7b8&"
+    var globalId = "GLOBAL-ID=EBAY-US&"
+    var pagination = "paginationInput.entriesPerPage=5"
+    
     
     
     // MARK: IBOutlets ---------------------------------------------
@@ -24,10 +31,11 @@ class MainViewController: UIViewController {
     // MARK: IBActions ------------------------------
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        
+        let keyword = "kewyord=" + searchQuery + "&" // may need to inser '+' where there are spaces in the searchQuery
         searchQuery = searchTextField.text!
-        let encodedText = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        newEndPoint = String(format:"", encodedText!)
+        let encodedURL = newEndPoint + operationName + version + appName + globalId + keyword + pagination
+        newEndPoint = encodedURL
+        
         fetchData() { result in
             //something = result
         }
