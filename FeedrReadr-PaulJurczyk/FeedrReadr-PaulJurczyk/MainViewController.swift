@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK Local Variables ---------------------------
     
@@ -24,18 +24,19 @@ class MainViewController: UIViewController {
     var responseEncoding = "&X-EBAY-API-RESPONSE-ENCODING=JSON"
     var restPayload = "&REST-PAYLOAD"
     var callback = "&callback=_cb_findItemsByKeywords"
-    var result = [String : Any]()
+    var fetchedResult = [String : Any]()
     
     
     // MARK: IBOutlets ---------------------------------------------
     
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var mainTableView: UITableView!
     
     // MARK: IBActions ------------------------------
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        let keyword = "kewyord=" + searchQuery + "&" // may need to inser '+' where there are spaces in the searchQuery
         searchQuery = searchTextField.text!
+        let keyword = "kewyord=" + searchQuery + "&" // may need to insert '+' where there are spaces in the searchQuery
         let encodedURL = newEndPoint + operationName + version + appName + globalId + restPayload + callback + keyword + pagination
         newEndPoint = encodedURL
         print(newEndPoint)
@@ -44,6 +45,7 @@ class MainViewController: UIViewController {
                 let jsonObject = try JSONSerialization.jsonObject(with: result, options: .mutableContainers) as! [String : Any]
                 let resultsTopLayer = jsonObject["findItemsByKeywordsResponse"] as? [String : Any]
                 let results = resultsTopLayer?["searchResult"] as? [String : Any]
+                self.fetchedResult = results!
                 let item = results?["item"] as? [String : Any]
                 let titleArray = item?["title"] as? [String]
                 let title = titleArray?[0]
@@ -85,8 +87,19 @@ class MainViewController: UIViewController {
         }
     }
     
+    // MARK: Tableview Protocols
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResult.count
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! MyTableViewCell
+        cell.itemTitleLabel.text = fetchedResult[indexPath.row]
+        
+        return cell
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

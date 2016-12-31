@@ -14,6 +14,7 @@
 		040453D01DF1E11F00E5553A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */; };
 		040453DC1DF1E28200E5553A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040453DB1DF1E28200E5553A /* MainTableViewCell.swift */; };
 		046F68B31DF384E6008BC9A5 /* eBay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F68B21DF384E6008BC9A5 /* eBay.swift */; };
+		04D82D271E17476000B98A3D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D82D261E17476000B98A3D /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		040453D11DF1E11F00E5553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		040453DB1DF1E28200E5553A /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		046F68B21DF384E6008BC9A5 /* eBay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eBay.swift; sourceTree = "<group>"; };
+		04D82D261E17476000B98A3D /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				040453C91DF1E11F00E5553A /* Main.storyboard */,
 				040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */,
 				040453DB1DF1E28200E5553A /* MainTableViewCell.swift */,
+				04D82D261E17476000B98A3D /* MyTableViewCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 				TargetAttributes = {
 					040453C11DF1E11F00E5553A = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = DHALB9C4R4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -177,6 +181,7 @@
 				040453C81DF1E11F00E5553A /* MainViewController.swift in Sources */,
 				040453DC1DF1E28200E5553A /* MainTableViewCell.swift in Sources */,
 				046F68B31DF384E6008BC9A5 /* eBay.swift in Sources */,
+				04D82D271E17476000B98A3D /* MyTableViewCell.swift in Sources */,
 				040453C61DF1E11F00E5553A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DHALB9C4R4;
 				INFOPLIST_FILE = "FeedrReadr-PaulJurczyk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "General-Assembly.FeedrReadr-PaulJurczyk";
@@ -310,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DHALB9C4R4;
 				INFOPLIST_FILE = "FeedrReadr-PaulJurczyk/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "General-Assembly.FeedrReadr-PaulJurczyk";
