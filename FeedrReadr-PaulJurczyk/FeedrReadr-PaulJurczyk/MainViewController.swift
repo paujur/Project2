@@ -15,8 +15,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var searchQuery = ""
     var searchInitiated = Bool()
     // May want to me the vars below to somewhere more global, or into a class
-    var newEndPoint = "http://svcs/ebay.com/services/search/FindingService/v1?"
-    var operationName = "&OPERATION-NAME=findItemsByKeywords"
+    var newEndPoint = "http://svcs.ebay.com/services/search/FindingService/v1?"
+    var operationName = "OPERATION-NAME=findItemsByKeywords"
     var version = "&SERVICE-VERSION=1.13.0"
     var appName = "&SECURITY-APPNAME=PaulJurc-FeedrRea-PRD-445f0c763-0cddb7b8"
     var globalId = "&GLOBAL-ID=EBAY-US"
@@ -24,6 +24,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var responseEncoding = "&X-EBAY-API-RESPONSE-ENCODING=JSON"
     var restPayload = "&REST-PAYLOAD"
     var callback = "&callback=_cb_findItemsByKeywords"
+    var dataFormat = "&REQUEST-DATA-FORMAT=JSON"
     var fetchedResult = [String : Any]()
     
     
@@ -35,17 +36,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: IBActions ------------------------------
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
+        
         searchQuery = searchTextField.text!
-        let keyword = "kewyord=" + searchQuery + "&" // may need to insert '+' where there are spaces in the searchQuery
-        let encodedURL = newEndPoint + operationName + version + appName + globalId + restPayload + callback + keyword + pagination
+        let keyword = "&keywords=" + searchQuery
+        let encodedURL = newEndPoint + operationName + version + appName + globalId + keyword + pagination + dataFormat + restPayload + callback
         newEndPoint = encodedURL
-        print(newEndPoint)
+        //print(newEndPoint)
         fetchData() { result in
+             self.newEndPoint = "http://svcs/ebay.com/services/search/FindingService/v1?"
             do {
                 let jsonObject = try JSONSerialization.jsonObject(with: result, options: .mutableContainers) as! [String : Any]
+                let instance = EbayItem(jsonObject: jsonObject)
+                print(instance.name)
                 let resultsTopLayer = jsonObject["findItemsByKeywordsResponse"] as? [String : Any]
                 let results = resultsTopLayer?["searchResult"] as? [String : Any]
-                self.fetchedResult = results!
                 let item = results?["item"] as? [String : Any]
                 let titleArray = item?["title"] as? [String]
                 let title = titleArray?[0]
@@ -64,13 +68,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
             }
         }
-        
+       
     }
     
     
-    private func fetchData(closure: @escaping (Data) -> ()) {
-        if searchInitiated == true {
-            let endpoint = newEndPoint
+    func fetchData(closure: @escaping (Data) -> ()) {
+     
+            var endpoint = newEndPoint
             let url = URLRequest(url: URL(string: endpoint)!)
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -83,8 +87,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     closure(responseData)
                 }
             }
+        
+        
             task.resume()
-        }
+        
     }
     
     // MARK: Tableview Protocols
@@ -95,7 +101,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! MyTableViewCell
-        cell.itemTitleLabel.text = fetchedResult[indexPath.row]
+       // cell.itemTitleLabel.text = fetchedResult[indexPath.row]
         
         return cell
     }
