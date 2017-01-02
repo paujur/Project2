@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedrReadr-PaulJurczyk/MainViewController.swift"
-            timestampString = "505080889.875894"
+            timestampString = "505089073.009836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedrReadr-PaulJurczyk/MainViewController.swift"
-            timestampString = "505080910.216646"
+            timestampString = "505089153.826799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "searchButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedrReadr-PaulJurczyk/MainViewController.swift"
-            timestampString = "505080914.704993"
+            timestampString = "505089194.525003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "searchButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>

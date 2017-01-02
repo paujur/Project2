@@ -23,8 +23,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var pagination = "&paginationInput.entriesPerPage=5"
     var responseEncoding = "&X-EBAY-API-RESPONSE-ENCODING=JSON"
     var restPayload = "&REST-PAYLOAD"
-    var callback = "&callback=_cb_findItemsByKeywords"
-    var dataFormat = "&REQUEST-DATA-FORMAT=JSON"
+    var callback = "fetchData"
+    var dataFormat = "&RESPONSE-DATA-FORMAT=JSON"
     var fetchedResult = [String : Any]()
     
     
@@ -45,27 +45,30 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchData() { result in
              self.newEndPoint = "http://svcs/ebay.com/services/search/FindingService/v1?"
             do {
+             
+                
                 let jsonObject = try JSONSerialization.jsonObject(with: result, options: .mutableContainers) as! [String : Any]
                 let instance = EbayItem(jsonObject: jsonObject)
-                print(instance.name)
-                let resultsTopLayer = jsonObject["findItemsByKeywordsResponse"] as? [String : Any]
-                let results = resultsTopLayer?["searchResult"] as? [String : Any]
-                let item = results?["item"] as? [String : Any]
-                let titleArray = item?["title"] as? [String]
-                let title = titleArray?[0]
-                let categoryArray = item?["categoryName"] as? [String]
-                let category = categoryArray?[0]
-                let galleryURLArray = item?["galleryURL"] as? [String]
-                let galleryURL = galleryURLArray?[0]
-                let itemURLArray = item?["viewItemURL"] as? [String]
-                let itemURL = itemURLArray?[0]
-                let priceInfo = item?["currentPrice"] as? [String : Any]
-                let price = priceInfo?["__value__"] as? String
-                let conditionInfo = item?["condition"] as? [String : Any]
-                let condition = conditionInfo?["conditionDisplayName"] as? String
+               //print(instance.name)
+                
+              // let resultsTopLayer = jsonObject["findItemsByKeywordsResponse"] as? [String : Any]
+//                let results = resultsTopLayer?["searchResult"] as? [String : Any]
+//                let item = results?["item"] as? [String : Any]
+//                let titleArray = item?["title"] as? [String]
+//                let title = titleArray?[0]
+//                let categoryArray = item?["categoryName"] as? [String]
+//                let category = categoryArray?[0]
+//                let galleryURLArray = item?["galleryURL"] as? [String]
+//                let galleryURL = galleryURLArray?[0]
+//                let itemURLArray = item?["viewItemURL"] as? [String]
+//                let itemURL = itemURLArray?[0]
+//                let priceInfo = item?["currentPrice"] as? [String : Any]
+//                let price = priceInfo?["__value__"] as? String
+//                let conditionInfo = item?["condition"] as? [String : Any]
+//                let condition = conditionInfo?["conditionDisplayName"] as? String
             }
             catch {
-                
+                print("we gots an error")
             }
         }
        
@@ -75,10 +78,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func fetchData(closure: @escaping (Data) -> ()) {
      
             var endpoint = newEndPoint
-            let url = URLRequest(url: URL(string: endpoint)!)
+            var url = URLRequest(url: URL(string: endpoint)!)
+        // need to make this a POST in order to receive JSON, not GET
+            //url.httpMethod = "GET"
+        // this tries to add the right parameter to the header
+            //url.setValue("JSON", forHTTPHeaderField: "X-EBAY-SOA-RESPONSE-DATA-FORMAT")
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 // TODO: add error handling
+               
                 guard let responseData = data else {
                    // self.itemTextView.text = "Error: did not receive data"
                     return
