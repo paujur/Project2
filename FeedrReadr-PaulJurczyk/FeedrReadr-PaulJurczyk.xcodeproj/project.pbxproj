@@ -12,6 +12,7 @@
 		040453CB1DF1E11F00E5553A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453C91DF1E11F00E5553A /* Main.storyboard */; };
 		040453CD1DF1E11F00E5553A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040453CC1DF1E11F00E5553A /* Assets.xcassets */; };
 		040453D01DF1E11F00E5553A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */; };
+		0448B2FC1E1B3115005406B4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B2FB1E1B3115005406B4 /* DetailsViewController.swift */; };
 		046F68B31DF384E6008BC9A5 /* eBay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F68B21DF384E6008BC9A5 /* eBay.swift */; };
 		04D82D271E17476000B98A3D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D82D261E17476000B98A3D /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		040453CC1DF1E11F00E5553A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040453CF1DF1E11F00E5553A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040453D11DF1E11F00E5553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0448B2FB1E1B3115005406B4 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		046F68B21DF384E6008BC9A5 /* eBay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eBay.swift; sourceTree = "<group>"; };
 		04D82D261E17476000B98A3D /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 			children = (
 				040453C51DF1E11F00E5553A /* AppDelegate.swift */,
 				040453C71DF1E11F00E5553A /* MainViewController.swift */,
+				0448B2FB1E1B3115005406B4 /* DetailsViewController.swift */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				046F68B31DF384E6008BC9A5 /* eBay.swift in Sources */,
 				04D82D271E17476000B98A3D /* MyTableViewCell.swift in Sources */,
 				040453C61DF1E11F00E5553A /* AppDelegate.swift in Sources */,
+				0448B2FC1E1B3115005406B4 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

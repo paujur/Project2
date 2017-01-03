@@ -63,19 +63,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     fetchedItems.append(newItem)
                 }
                 
-                //let itemTitle =
-                //                let titleArray = item?["title"] as? [String]
-                //                let title = titleArray?[0]
-                //                let categoryArray = item?["categoryName"] as? [String]
-                //                let category = categoryArray?[0]
-                //                let galleryURLArray = item?["galleryURL"] as? [String]
-                //                let galleryURL = galleryURLArray?[0]
-                //                let itemURLArray = item?["viewItemURL"] as? [String]
-                //                let itemURL = itemURLArray?[0]
-                //                let priceInfo = item?["currentPrice"] as? [String : Any]
-                //                let price = priceInfo?["__value__"] as? String
-                //                let conditionInfo = item?["condition"] as? [String : Any]
-                //                let condition = conditionInfo?["conditionDisplayName"] as? String
             }
             catch {
                 print("we gots an error")
@@ -89,16 +76,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let endpoint = newEndPoint
         let url = URLRequest(url: URL(string: endpoint)!)
-        // need to make this a POST in order to receive JSON, not GET
-        //url.httpMethod = "GET"
-        // this tries to add the right parameter to the header
-        //url.setValue("JSON", forHTTPHeaderField: "X-EBAY-SOA-RESPONSE-DATA-FORMAT")
+      
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let task = session.dataTask(with: url) { (data, response, error) in
-            // TODO: add error handling
+          
             
             guard let responseData = data else {
-                // self.itemTextView.text = "Error: did not receive data"
+                
                 return
             }
             DispatchQueue.main.async {
@@ -143,6 +127,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.itemImageView.image = UIImage(data: result)
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailsSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "DetailsSegue"){
+            let detailsViewController = segue.destination as! DetailsViewController
+            let indexPath = mainTableView.indexPathForSelectedRow
+            detailsViewController.item = fetchedItems[(indexPath?.row)!]
+        }
     }
     
     override func viewDidLoad() {
