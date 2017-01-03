@@ -15,6 +15,7 @@ var fetchedItems = [EbayItem]()
 class EbayItem {
     var title: String
     var price: String
+    var imageURL: String
     //var description: String
     init(jsonObject: [String: Any]){
         print(jsonObject)
@@ -25,6 +26,8 @@ class EbayItem {
         let currentPrices = currentSellingStatus?["currentPrice"] as? [Any]
         let currentPrice = currentPrices?[0] as? [String : Any]
         price = currentPrice?["__value__"] as! String
+        let gallery = jsonObject["galleryURL"] as! [String]
+        imageURL = gallery[0]
     }
    
     

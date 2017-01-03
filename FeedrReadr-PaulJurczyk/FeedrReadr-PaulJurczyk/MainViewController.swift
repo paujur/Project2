@@ -14,13 +14,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var searchQuery = ""
     var searchInitiated = Bool()
+    var imageEndpoint = ""
     // May want to me the vars below to somewhere more global, or into a class
     var newEndPoint = "http://svcs.ebay.com/services/search/FindingService/v1?"
     var operationName = "OPERATION-NAME=findItemsByKeywords"
     var version = "&SERVICE-VERSION=1.13.0"
     var appName = "&SECURITY-APPNAME=PaulJurc-FeedrRea-PRD-445f0c763-0cddb7b8"
     var globalId = "&GLOBAL-ID=EBAY-US"
-    var pagination = "&paginationInput.entriesPerPage=5"
+    var pagination = "&paginationInput.entriesPerPage=20"
     var responseEncoding = "&X-EBAY-API-RESPONSE-ENCODING=JSON"
     var restPayload = "&REST-PAYLOAD"
     var callback = "fetchData" // I believe this needs to be the same as teh function that's calling the API call
@@ -110,6 +111,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    func fetchImages(closure: @escaping (Data) ->()) {
+        let endpoint = imageEndpoint
+        let url = URLRequest(url: URL(string: endpoint)!)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let task = session.dataTask(with: url) { (data, response, error) in
+            guard let imageResponseData = data else {
+                print("Error: couldn't load image.")
+                return
+            }
+            DispatchQueue.main.async {
+                closure(imageResponseData)
+            }
+        }
+        task.resume()
+    }
+    
     // MARK: Tableview Protocols
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,7 +136,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! MyTableViewCell
         cell.itemTitleLabel.text = fetchedItems[indexPath.row].title
-        cell.itemPriceLabel.text = "$ " + fetchedItems[indexPath.row].price + "0"
+        cell.itemPriceLabel.text = "$ " + fetchedItems[indexPath.row].price
+        let imageURL = fetchedItems[indexPath.row].imageURL
+        imageEndpoint = imageURL
+        self.fetchImages { result in
+            cell.itemImageView.image = UIImage(data: result)
+        }
         return cell
     }
     

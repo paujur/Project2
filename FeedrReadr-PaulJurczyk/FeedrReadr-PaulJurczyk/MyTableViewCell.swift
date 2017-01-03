@@ -14,6 +14,7 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
     
     @IBOutlet weak var itemPriceLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
