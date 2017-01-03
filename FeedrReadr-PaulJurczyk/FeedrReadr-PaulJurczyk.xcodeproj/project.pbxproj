@@ -12,6 +12,7 @@
 		040453CB1DF1E11F00E5553A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453C91DF1E11F00E5553A /* Main.storyboard */; };
 		040453CD1DF1E11F00E5553A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040453CC1DF1E11F00E5553A /* Assets.xcassets */; };
 		040453D01DF1E11F00E5553A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */; };
+		0444B7541E1BEA66008C33E0 /* eBay-rightnow-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0444B7531E1BEA66008C33E0 /* eBay-rightnow-logo.png */; };
 		0448B2FC1E1B3115005406B4 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448B2FB1E1B3115005406B4 /* DetailsViewController.swift */; };
 		046F68B31DF384E6008BC9A5 /* eBay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F68B21DF384E6008BC9A5 /* eBay.swift */; };
 		04D82D271E17476000B98A3D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D82D261E17476000B98A3D /* MyTableViewCell.swift */; };
@@ -25,6 +26,7 @@
 		040453CC1DF1E11F00E5553A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040453CF1DF1E11F00E5553A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040453D11DF1E11F00E5553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0444B7531E1BEA66008C33E0 /* eBay-rightnow-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eBay-rightnow-logo.png"; sourceTree = "<group>"; };
 		0448B2FB1E1B3115005406B4 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		046F68B21DF384E6008BC9A5 /* eBay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eBay.swift; sourceTree = "<group>"; };
 		04D82D261E17476000B98A3D /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		040453DA1DF1E17100E5553A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0444B7531E1BEA66008C33E0 /* eBay-rightnow-logo.png */,
 				040453CC1DF1E11F00E5553A /* Assets.xcassets */,
 			);
 			name = Images;
@@ -168,6 +171,7 @@
 				040453D01DF1E11F00E5553A /* LaunchScreen.storyboard in Resources */,
 				040453CD1DF1E11F00E5553A /* Assets.xcassets in Resources */,
 				040453CB1DF1E11F00E5553A /* Main.storyboard in Resources */,
+				0444B7541E1BEA66008C33E0 /* eBay-rightnow-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
