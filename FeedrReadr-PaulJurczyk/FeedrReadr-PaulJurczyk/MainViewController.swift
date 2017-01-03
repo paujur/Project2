@@ -48,12 +48,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchData() { result in
             
             do {
-                
-                
                 let jsonObject = try JSONSerialization.jsonObject(with: result, options: .mutableContainers) as! [String : Any]
-                
-                
-                
                 let resultsTopLayer = jsonObject["findItemsByKeywordsResponse"] as? [Any]
                 let oneMoreLayer = resultsTopLayer?[0] as? [String : Any]
                 let results = oneMoreLayer?["searchResult"] as? [Any]

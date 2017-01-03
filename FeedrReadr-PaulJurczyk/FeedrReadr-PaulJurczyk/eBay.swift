@@ -26,7 +26,9 @@ class EbayItem {
         let currentSellingStatus = sellingStatus?[0] as? [String : Any]
         let currentPrices = currentSellingStatus?["currentPrice"] as? [Any]
         let currentPrice = currentPrices?[0] as? [String : Any]
-        price = currentPrice?["__value__"] as! String
+        // need to format the price to two decimal places
+        let unformattedPrice = Float(currentPrice?["__value__"] as! String)
+        price = String(format: "%.2f", unformattedPrice!)
         let gallery = jsonObject["galleryURL"] as! [String]
         imageURL = gallery[0]
         let itemURLs = jsonObject["viewItemURL"] as! [String]
