@@ -119,7 +119,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! MyTableViewCell
         cell.itemTitleLabel.text = fetchedItems[indexPath.row].title
-        
+        cell.itemPriceLabel.text = "$ " + fetchedItems[indexPath.row].price + "0"
         return cell
     }
     

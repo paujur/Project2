@@ -12,7 +12,6 @@
 		040453CB1DF1E11F00E5553A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453C91DF1E11F00E5553A /* Main.storyboard */; };
 		040453CD1DF1E11F00E5553A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040453CC1DF1E11F00E5553A /* Assets.xcassets */; };
 		040453D01DF1E11F00E5553A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */; };
-		040453DC1DF1E28200E5553A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040453DB1DF1E28200E5553A /* MainTableViewCell.swift */; };
 		046F68B31DF384E6008BC9A5 /* eBay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F68B21DF384E6008BC9A5 /* eBay.swift */; };
 		04D82D271E17476000B98A3D /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D82D261E17476000B98A3D /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 		040453CC1DF1E11F00E5553A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040453CF1DF1E11F00E5553A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040453D11DF1E11F00E5553A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		040453DB1DF1E28200E5553A /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		046F68B21DF384E6008BC9A5 /* eBay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eBay.swift; sourceTree = "<group>"; };
 		04D82D261E17476000B98A3D /* MyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +81,6 @@
 			children = (
 				040453C91DF1E11F00E5553A /* Main.storyboard */,
 				040453CE1DF1E11F00E5553A /* LaunchScreen.storyboard */,
-				040453DB1DF1E28200E5553A /* MainTableViewCell.swift */,
 				04D82D261E17476000B98A3D /* MyTableViewCell.swift */,
 			);
 			name = UI;
@@ -179,7 +176,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				040453C81DF1E11F00E5553A /* MainViewController.swift in Sources */,
-				040453DC1DF1E28200E5553A /* MainTableViewCell.swift in Sources */,
 				046F68B31DF384E6008BC9A5 /* eBay.swift in Sources */,
 				04D82D271E17476000B98A3D /* MyTableViewCell.swift in Sources */,
 				040453C61DF1E11F00E5553A /* AppDelegate.swift in Sources */,

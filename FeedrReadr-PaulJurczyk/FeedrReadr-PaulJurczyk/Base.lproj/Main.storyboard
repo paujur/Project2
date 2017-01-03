@@ -40,6 +40,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5V-KM-pat">
+                                                    <rect key="frame" x="229" y="170" width="118" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oWR-28-Egx">
                                                     <rect key="frame" x="26" y="50" width="150" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -48,6 +55,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemImageView" destination="oWR-28-Egx" id="XU0-Lc-Duc"/>
+                                            <outlet property="itemPriceLabel" destination="k5V-KM-pat" id="H9n-P6-dcT"/>
                                             <outlet property="itemTitleLabel" destination="1YV-fd-to6" id="Tzf-Yz-5gq"/>
                                         </connections>
                                     </tableViewCell>
