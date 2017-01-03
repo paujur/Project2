@@ -36,8 +36,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: IBActions ------------------------------
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        //fetchedItems = [EbayItem]()
-        //self.newEndPoint = "http://svcs/ebay.com/services/search/FindingService/v1?"
+        fetchedItems = [EbayItem]()
+        self.newEndPoint = "http://svcs.ebay.com/services/search/FindingService/v1?"
         searchQuery = searchTextField.text!
         let keyword = "&keywords=" + searchQuery
         let encodedURL = newEndPoint + operationName + version + appName + globalId + keyword + pagination + dataFormat + restPayload + callback
