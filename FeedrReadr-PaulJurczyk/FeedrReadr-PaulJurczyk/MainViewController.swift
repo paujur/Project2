@@ -40,7 +40,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchedItems = [EbayItem]()
         self.newEndPoint = "http://svcs.ebay.com/services/search/FindingService/v1?"
         searchQuery = searchTextField.text!
-        let keyword = "&keywords=" + searchQuery
+        let encodedText = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        let keyword = String(format:"&keywords=%@", encodedText)
         let encodedURL = newEndPoint + operationName + version + appName + globalId + keyword + pagination + dataFormat + restPayload + callback
         newEndPoint = encodedURL
         //print(newEndPoint)
