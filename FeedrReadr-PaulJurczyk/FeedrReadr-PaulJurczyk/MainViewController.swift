@@ -129,15 +129,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "DetailsSegue", sender: self)
-    }
+    // I don't need this function below because I created a segue in storyboard from the cell to the next ViewController. If I have this, then I will segue twice.
+    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //performSegue(withIdentifier: "DetailsSegue", sender: self)
+    //}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "DetailsSegue"){
             let detailsViewController = segue.destination as! DetailsViewController
-            let indexPath = mainTableView.indexPathForSelectedRow
-            detailsViewController.item = fetchedItems[(indexPath?.row)!]
+            let indexPath = mainTableView.indexPathForSelectedRow!
+            detailsViewController.item = fetchedItems[indexPath.row]
         }
     }
     

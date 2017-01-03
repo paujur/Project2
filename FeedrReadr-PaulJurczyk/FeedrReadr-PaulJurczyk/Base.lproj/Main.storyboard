@@ -57,7 +57,7 @@
                                             <outlet property="itemImageView" destination="oWR-28-Egx" id="XU0-Lc-Duc"/>
                                             <outlet property="itemPriceLabel" destination="k5V-KM-pat" id="H9n-P6-dcT"/>
                                             <outlet property="itemTitleLabel" destination="1YV-fd-to6" id="Tzf-Yz-5gq"/>
-                                            <segue destination="rzQ-d2-pez" kind="show" identifier="DetailsSegue" id="DWd-PA-LLg"/>
+                                            <segue destination="rzQ-d2-pez" kind="show" identifier="DetailsSegue" id="Jpv-Fc-kti"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
