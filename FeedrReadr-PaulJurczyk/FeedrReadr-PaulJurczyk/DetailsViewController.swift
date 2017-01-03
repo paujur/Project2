@@ -12,6 +12,7 @@ class DetailsViewController: UIViewController {
     // MARK: Local Variables -----------------
     
     var item: EbayItem?
+    var imageEndpoint = ""
 
     @IBOutlet weak var itemImageView: UIImageView!
     
@@ -19,10 +20,30 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var itemPriceLabel: UILabel!
     
+    func fetchImages(closure: @escaping (Data) ->()) {
+        let endpoint = imageEndpoint
+        let url = URLRequest(url: URL(string: endpoint)!)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let task = session.dataTask(with: url) { (data, response, error) in
+            guard let imageResponseData = data else {
+                print("Error: couldn't load image.")
+                return
+            }
+            DispatchQueue.main.async {
+                closure(imageResponseData)
+            }
+        }
+        task.resume()
+    }
+    
     override func viewDidLoad() {
         if let item = item {
             itemTitleLabel.text = item.title
             itemPriceLabel.text = item.price
+            imageEndpoint = item.imageURL
+            self.fetchImages { result in
+                self.itemImageView.image = UIImage(data: result)
+            }
         }
         super.viewDidLoad()
 
