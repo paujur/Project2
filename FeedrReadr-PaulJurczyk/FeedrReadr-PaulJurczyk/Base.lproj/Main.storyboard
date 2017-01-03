@@ -124,6 +124,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9V-qy-N9V">
+                                <rect key="frame" x="172" y="593" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.70408746369999997" blue="0.1997613449" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buyItem:" destination="rzQ-d2-pez" eventType="touchUpInside" id="Nnm-Ud-efQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

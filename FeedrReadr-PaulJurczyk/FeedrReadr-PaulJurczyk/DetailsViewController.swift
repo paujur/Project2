@@ -14,11 +14,24 @@ class DetailsViewController: UIViewController {
     var item: EbayItem?
     var imageEndpoint = ""
 
+    //MARK: IBOutlets -----------------
     @IBOutlet weak var itemImageView: UIImageView!
     
     @IBOutlet weak var itemTitleLabel: UILabel!
     
     @IBOutlet weak var itemPriceLabel: UILabel!
+    
+    
+    // MARK: IBActions ---------------
+    
+    @IBAction func buyItem(_ sender: UIButton) {
+        if let url = NSURL(string: (item?.itemURL)!) {
+            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }
+    }
+   
+    
+    
     
     func fetchImages(closure: @escaping (Data) ->()) {
         let endpoint = imageEndpoint

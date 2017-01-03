@@ -16,6 +16,7 @@ class EbayItem {
     var title: String
     var price: String
     var imageURL: String
+    var itemURL: String
     //var description: String
     init(jsonObject: [String: Any]){
         print(jsonObject)
@@ -28,6 +29,8 @@ class EbayItem {
         price = currentPrice?["__value__"] as! String
         let gallery = jsonObject["galleryURL"] as! [String]
         imageURL = gallery[0]
+        let itemURLs = jsonObject["viewItemURL"] as! [String]
+        itemURL = itemURLs[0]
     }
    
     
